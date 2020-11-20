@@ -15,9 +15,12 @@ const pool = new Pool({
 //   PRIMARY KEY(user_id)
 // )
 
+// Query for adding user
 // INSERT INTO users(email, accesstoken) VALUES ('sql@gmail.com', 'token')
-
-// need join table for users_in_fishes
+// Query for deleting user 1
+// DELETE FROM users WHERE user_id = 1
+// Query for updating user 1 email
+// UPDATE users SET email = 'postgresql@gmail.com' WHERE user_id = 1
 
 // CREATE TABLE users_in_fishes(
 //   _id INT GENERATED ALWAYS AS IDENTITY,
@@ -28,17 +31,28 @@ const pool = new Pool({
 //   CONSTRAINT fish_id FOREIGN KEY(fish_id) REFERENCES fishes(fish_id)
 // )
 
-// INSERT INTO fishes(name, color, size) VALUES ('Guppy', 'yellow', 15)
+// INSERT INTO users_in_fishes(user_id, fish_id) VALUES (1, 2)
 
 // CREATE TABLE fishes(
 //   fish_id INT GENERATED ALWAYS AS IDENTITY,
-//   name VARCHAR NOT NULL,
+//   name VARCHAR NOT NULL UNIQUE,
 //   color VARCHAR NOT NULL,
 //   size INT CHECK (size > 0),
 //   PRIMARY KEY(fish_id),
 //   )
 
-  // INSERT INTO fishes(name, color, size) VALUES ('Guppy', 'yellow', 15)
+// Query for adding fishes
+// INSERT INTO fishes(name, color, size) VALUES ('Guppy', 'yellow', 15)
+
+// Get all fishes for a particular user 1
+// SELECT * FROM fishes f
+// INNER JOIN users_in_fishes uf ON f.fish_id = uf.fish_id WHERE uf.user_id = 1
+
+// Get all data on fishes and users
+// SELECT * from users u
+// FULL JOIN users_in_fishes uf ON u.user_id = uf.user_id
+// FULL JOIN fishes f ON uf.fish_id = f.fish_id
+
 
 module.exports = {
   query: (text, params, callback) => {
