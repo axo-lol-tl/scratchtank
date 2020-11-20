@@ -7,6 +7,8 @@ const path = require('path');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const port = 3000;
+const db = require('./models/model')
+
 
 //routers
 
