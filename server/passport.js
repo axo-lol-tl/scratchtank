@@ -13,12 +13,10 @@ passport.use(
     },
     async (request, accessToken, refreshToken, profile, done) => {
       try {
-        const values = [profile.email, profile.id];
         const text1 = `select exists(select * from users where users.accesstoken = '${profile.id}')`;
         const text2 = `INSERT INTO users(email, accesstoken) VALUES ('${profile.email}', '${profile.id}')`;
-
         const response = await db.query(text1);
-        console.log(response.rows[0].exists, profile.id);
+
         if (!response.rows[0].exists) await db.query(text2);
         return done(null, profile);
       } catch (e) {
