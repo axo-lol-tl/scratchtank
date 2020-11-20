@@ -7,9 +7,8 @@ const cookies = require('cookie-session');
 const bodyParser = require('body-parser');
 
 //routers
-const login = require('./router/login');
-const signin = require('./router/signin');
-const aquarium = require('./router/aquarium');
+const loginRouter = require('./router/login');
+const aquariumRouter = require('./router/aquarium');
 
 const port = 3000;
 
@@ -20,9 +19,9 @@ app.use(bodyParser.urlencoded());
 
 app.use('/api', (req, res) => res.sendStatus(200));
 
-app.use('/login', login);
+app.use('/login', loginRouter);
 
-app.use('/aquarium', aquarium);
+app.use('/aquarium', aquariumRouter);
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.resolve(__dirname, '../build')));
