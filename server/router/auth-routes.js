@@ -7,9 +7,7 @@ const passportSetup = require('../passport');
 
 // const signinController = require('../controllers/signinController');
 
-router.get('/success', (req, res) =>
-  res.sendFile(path.resolve(__dirname, '../../index.html'))
-);
+router.get('/success', (req, res) => res.redirect('/'));
 
 router.get('/logout', (req, res) => res.send('logging out'));
 
