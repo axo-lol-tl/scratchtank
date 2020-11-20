@@ -22,8 +22,6 @@ app.use('/api', (req, res) => res.sendStatus(200));
 
 app.use('/login', login);
 
-app.use('/signin', signin);
-
 app.use('/aquarium', aquarium);
 
 if (process.env.NODE_ENV === 'production') {
@@ -33,7 +31,11 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
+app.use('/', (req, res, err) => {
+  //global path error handler
+  console.log(err);
+  res.status(404).send('requested file not found');
+})
 
 app.listen(port, () => {
   console.log(`Express server on ${port}`);
