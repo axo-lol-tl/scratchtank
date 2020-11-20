@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -32,4 +33,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new webpack.ProvidePlugin({ 'window.decomp': 'poly-decomp' })],
 };
