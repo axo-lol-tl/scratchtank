@@ -11,14 +11,9 @@
   "dependencies": {
     "cookie-session": "^1.4.0",
     "express": "^4.12.3",
-<<<<<<< HEAD
-    "gulp": "^3.9.0",
-    "pg": "^8.5.1",
-    "prop-types": "^15.6.1",
-=======
     "passport": "^0.4.1",
     "passport-google-oauth2": "^0.2.0",
->>>>>>> main
+    "pg": "^8.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
