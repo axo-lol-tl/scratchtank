@@ -6,13 +6,14 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production nodemon server/server.js",
     "build": "cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=development concurrently \"webpack-dev-server --open\" \"nodemon server/server.js\""
+    "dev": "cross-env NODE_ENV=development concurrently \"webpack-dev-server --open\" \"nodemon server/server.js\"",
+    "gulp-prod": "node_modules/.bin/gulp prod",
+    "gulp-dev": "node_modules/.bin/gulp dev"
   },
   "dependencies": {
-    "cookie-session": "^1.4.0",
     "express": "^4.12.3",
-    "passport": "^0.4.1",
-    "passport-google-oauth2": "^0.2.0",
+    "gulp": "^3.9.0",
+    "prop-types": "^15.6.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0"
@@ -26,12 +27,8 @@
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "css-loader": "^5.0.1",
-    "eslint": "^7.13.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
     "matter-js": "^0.14.2",
     "nodemon": "^1.18.9",
-    "prettier": "^2.1.2",
     "react-hot-loader": "^4.13.0",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
