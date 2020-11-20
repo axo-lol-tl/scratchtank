@@ -9,13 +9,6 @@ const bodyParser = require('body-parser');
 const port = 3000;
 
 //routers
-<<<<<<< HEAD
-const loginRouter = require('./router/login');
-const aquariumRouter = require('./router/aquarium');
-
-const port = 3000;
-=======
->>>>>>> f7841b7e418bf984532b0ffd38176b5e6597532f
 
 const authRouter = require('./router/auth-routes');
 // const aquarium = require('./router/aquarium');
@@ -26,17 +19,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-<<<<<<< HEAD
-app.use('/api', (req, res) => res.sendStatus(200));
-
-app.use('/login', loginRouter);
-
-app.use('/aquarium', aquariumRouter);
-=======
 app.use('/api/auth', authRouter);
 
 app.use('/api', (req, res) => res.sendStatus(200));
->>>>>>> f7841b7e418bf984532b0ffd38176b5e6597532f
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
