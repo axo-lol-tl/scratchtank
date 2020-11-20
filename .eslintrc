@@ -3,7 +3,7 @@
     "browser": true,
     "es6": true
   },
-  "plugins": ["import"],
+  "plugins": ["import", "prettier"],
   "extends": ["eslint:recommended","airbnb", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -13,6 +13,7 @@
     }
   },
   "rules": {
+    "prettier/prettier": ["error"],
     "no-console": "warn",
     "no-eval": "error",
     "import/first": "error",
