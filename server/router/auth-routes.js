@@ -11,12 +11,12 @@ router.get('/success', (req, res) => res.redirect('/'));
 
 router.get('/logout', (req, res) => res.send('logging out'));
 
-router.get(
+router.post(
   '/google',
   passport.authenticate('google', { scope: ['email', 'profile'] })
 );
 
-router.get(
+router.post(
   '/google/redirect',
   passport.authenticate('google', {
     successRedirect: '/api/auth/success',
