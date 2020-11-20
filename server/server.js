@@ -9,8 +9,8 @@ const bodyParser = require('body-parser');
 const port = 3000;
 
 //routers
-const authRouter = require('./router/auth-routes');
 
+const authRouter = require('./router/auth-routes');
 // const aquarium = require('./router/aquarium');
 
 app.use(bodyParser.json());
