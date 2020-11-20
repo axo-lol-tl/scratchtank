@@ -21,12 +21,9 @@ router.get(
 router.get(
   '/google/redirect',
   passport.authenticate('google', {
-    successRedirect: '/api/auth/google/success',
-    failureRedirect: '/api/auth/google/failure',
-  }),
-  (req, res) => {
-    res.redirect('/api');
-  }
+    successRedirect: '/api/auth/success',
+    failureRedirect: '/api/auth/failure',
+  })
 );
 
 module.exports = router;
