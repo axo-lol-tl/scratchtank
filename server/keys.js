@@ -6,6 +6,6 @@ module.exports = {
   },
 
   session: {
-    cookieKey: 'axolotlcuties'
-  }
+    cookieKey: 'axolotlcuties',
+  },
 };
