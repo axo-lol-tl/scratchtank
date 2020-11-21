@@ -9,7 +9,10 @@ const passportSetup = require('../passport');
 
 router.get('/success', (req, res) => res.redirect('/'));
 
-router.get('/logout', (req, res) => res.send('logging out'));
+router.get('/logout', (req, res) => {
+  req.logOut();
+  res.send('logging out')
+});
 
 router.get(
   '/google',
