@@ -1,37 +1,40 @@
 body {
-  background-color: #3e606f;
-  font-family: 'Bebas Neue', cursive;
+	background-color: #3e606f;
+	font-family: 'Bebas Neue', cursive;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .header1 {
-  background-color: #fcfff5;
-  color: #193441;
-  font-size: 30px;
-  padding: 1em;
-  border-radius: 0.5em;
-  text-align: center;
+	background-color: #fcfff5;
+	color: #193441;
+	font-size: 30px;
+	padding: 1em;
+	border-radius: 0.5em;
+	text-align: center;
 }
 
 .bttn {
-  background-color: #91aa9d;
-  color: #193441;
-  text-align: center;
-  padding: 32px 16px;
-  border-radius: 8px;
-  border: none;
-  font-size: 70%;
-  border: 2px solid #193441;
+	background-color: #91aa9d;
+	color: #193441;
+	text-align: center;
+	padding: 32px 16px;
+	border-radius: 8px;
+	border: none;
+	font-size: 70%;
+	border: 2px solid #193441;
 }
 
 .bttn:hover {
-  background-color: #d1dbbd;
-  color: #fcfff5;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #d1dbbd;
+	color: #fcfff5;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .canvas {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  border: 5px solid red;
+	display: flex;
+	justify-content: center;
+	width: fit-content;
+	/* border: 5px solid red; */
 }

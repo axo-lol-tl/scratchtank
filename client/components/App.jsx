@@ -1,16 +1,25 @@
 import React, { Component } from 'react';
 import HomePage from './HomePage.jsx';
-import FishTank from './FishTank.jsx';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login.jsx';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <HomePage />
-        <FishTank />
+// <Homepage component contains FishTank and Controls>
+
+function App () {
+  return (
+    <Router >
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/fishtank" exact component={Login} />
+        </Switch >
       </div>
-    );
-  }
-}
+    </Router>
+  );
+};
 
 export default App;
+
+
+
+
