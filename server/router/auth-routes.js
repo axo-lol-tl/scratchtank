@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const passport = require('passport');
@@ -11,7 +12,7 @@ router.get('/success', (req, res) => res.redirect('/'));
 
 router.get('/logout', (req, res) => {
   req.logOut();
-  res.send('logging out')
+  res.send('logging out');
 });
 
 router.get(
