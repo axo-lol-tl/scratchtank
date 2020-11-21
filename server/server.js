@@ -7,19 +7,26 @@ const path = require('path');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const port = 3000;
-const db = require('./models/model')
 
+const db = require('./models/model');
+const { cookieKey } = require('./keys').session;
 
 //routers
-
 const authRouter = require('./router/auth-routes');
 // const aquarium = require('./router/aquarium');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(
+  cookieSession({
+    maxAge: 24 * 60 * 60 * 1000,
+    keys: [cookieKey],
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api/auth', authRouter);
 
