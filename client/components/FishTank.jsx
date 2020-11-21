@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Matter from 'matter-js';
 import App from './App.js';
+=======
+
 import fish from '../static/vectors.js';
 import decomp from 'poly-decomp';
-// window.decomp = decomp;
 
-// const decomp = require('poly-decomp');
 
 const FishTank = () => {
 

@@ -7,9 +7,7 @@ const passportSetup = require('../passport');
 
 // const signinController = require('../controllers/signinController');
 
-router.get('/login', (req, res) =>
-  res.sendFile(path.resolve(__dirname, '../../index.html'))
-);
+router.get('/success', (req, res) => res.redirect('/'));
 
 router.get('/logout', (req, res) => res.send('logging out'));
 
@@ -21,12 +19,9 @@ router.get(
 router.get(
   '/google/redirect',
   passport.authenticate('google', {
-    successRedirect: '/google/success',
-    failureRedirect: '/google/failure',
-  }),
-  (req, res) => {
-    res.redirect('/api');
-  }
+    successRedirect: '/api/auth/success',
+    failureRedirect: '/api/auth/failure',
+  })
 );
 
 module.exports = router;
