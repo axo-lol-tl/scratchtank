@@ -1,16 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HomePage from './HomePage.jsx';
-import FishTank from './FishTank.jsx';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <HomePage />
-        <FishTank />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <HomePage user="JENNIEL" />
+    </div>
+  );
+};
 
 export default App;
