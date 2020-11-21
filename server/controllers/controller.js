@@ -1,13 +1,7 @@
-// const db = require(/*path to database connection*/);
+const db = require('../models/model');
 
-// const controller = {};
+const fishController.fetchFishes = (req, res, next) => {
+  
+}
 
-// controller.clientController = (req, res, next) => {
-// //handles all routing to and from database to retrieve user aquariums
-//   return next();
-// };
-
-// controller.aquariumController = (req, res, next) => {
-//   //gets fishies?
-//   return next();
-// }
+module.exports = fishController;
