@@ -10,6 +10,7 @@ module.exports = {
   },
   devServer: {
     publicPath: '/build',
+    historyApiFallback: true,
     proxy: {
       '/api': 'http://localhost:3000',
     },
@@ -30,6 +31,14 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         exclude: /(node_modules)/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },

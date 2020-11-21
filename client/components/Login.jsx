@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
 
-const loginPage = () => {
+import React from 'react';
+import googlelogin from '../static/googlenormal.png'
+
+function Login() {
+  document.querySelector('canvas').style.width = 0;
+  
   return (
-    <div>
-      <header className="login">LOGIN</header>
-      <h3>Use Your Google Account:</h3>
-      <a href="/api/auth/google">GOOGLE++</a>
-    </div>
-  );
-};
+    <div className="fishtank">
+      <button className="bttn" onClick={() => window.location.href = '/api/auth/google'}>
+      {/* <img src='../static/googlenormal.png' /> */}
 
-export default loginPage;
+      </button>
+    </div>
+  )
+}
+
+
+export default Login;

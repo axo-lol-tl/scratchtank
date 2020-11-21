@@ -1,3 +1,8 @@
+
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import FishTank from './FishTank.jsx'
+
 /* eslint-disable react/prop-types */
 /* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
@@ -36,7 +41,15 @@ const HomePage = ({ user }) => {
       // })
     };
 
+
     return (
+
+      <div>
+        <header className="header1">
+          <h1>Welcome to the Aquarium</h1>
+          <h2 className="header2">Welcome User!</h2>
+        </header>
+
       <div className="control-panel">
         <button
           type="submit"
@@ -55,6 +68,7 @@ const HomePage = ({ user }) => {
         <button type="submit" className="bttn" onClick={() => saveUsersFish()}>
           Sync
         </button>
+
       </div>
     );
   };
