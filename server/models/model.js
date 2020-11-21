@@ -1,9 +1,9 @@
 const { Pool } = require('pg');
 
-const PG_URI = 'postgres://swwzsbqk:2H0DivQiFgEomiUWwrREzWSeNVcfGAnN@rajje.db.elephantsql.com:5432/swwzsbqk';
+const {URI} = require('../keys').postgreSQL;
 
 const pool = new Pool({
-  connectionString: PG_URI
+  connectionString: URI
 });
 
 // reference for columns in tables and how to query
