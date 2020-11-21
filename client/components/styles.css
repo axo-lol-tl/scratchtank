@@ -1,11 +1,43 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
 body {
 	background-color: #3e606f;
+	width: 100%;
+	height: 100%;
+	margin: 0;
 	font-family: 'Bebas Neue', cursive;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
 }
+#root {
+	width: 100%;
+	height: 100%;
+}
 
+.App {
+	width: 100%;
+	height: 100%;
+}
+
+.invisible {
+	width: 0;
+	height: 0;
+}
+
+.fishtank {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-image: url('../static/curtains.jpg');
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+}
 .header1 {
 	background-color: #fcfff5;
 	color: #193441;
@@ -16,14 +48,23 @@ body {
 }
 
 .bttn {
+	display: flex;
+	width: 385px;
+	height: 97px;
+	/* max-width: 100%; */
+	object-fit: contain;
+	object-position: center;
 	background-color: #91aa9d;
+	background-image: url('../static/googlenormal.png');
+	/* background-size: cover; */
+	background-repeat: no-repeat;
 	color: #193441;
-	text-align: center;
-	padding: 32px 16px;
+	/* padding: 32px 16px; */
 	border-radius: 8px;
 	border: none;
 	font-size: 70%;
 	border: 2px solid #193441;
+	padding: 0px;
 }
 
 .bttn:hover {
