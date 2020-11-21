@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import FishTank from './FishTank.jsx';
 
@@ -47,6 +45,13 @@ const HomePage = ({ user }) => {
       setTank(<FishTank fishCount={fishCount} />);
     };
     return (
+
+      <div>
+        <header className="header1">
+          <h1>Welcome to the Aquarium</h1>
+          <h2 className="header2">Welcome User!</h2>
+        </header>
+
       <div className="control-panel">
         <button type="submit" className="bttn" onClick={() => addFish()}>
           Add
@@ -61,6 +66,7 @@ const HomePage = ({ user }) => {
         <button type="submit" className="bttn" onClick={() => saveUsersFish()}>
           Sync
         </button>
+
       </div>
     );
   };
