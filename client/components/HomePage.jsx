@@ -1,15 +1,9 @@
-
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import FishTank from './FishTank.jsx'
-
-/* eslint-disable react/prop-types */
-/* eslint-disable import/extensions */
 import React, { useEffect, useState } from 'react';
 import FishTank from './FishTank.jsx';
 
 const HomePage = ({ user }) => {
   const [fishCount, setFishCount] = useState(5);
+  const [tank, setTank] = useState(<FishTank fishCount={fishCount} />);
   // const [userDB, setUserDB] = useState(user)
 
   useEffect(() => {
@@ -40,8 +34,16 @@ const HomePage = ({ user }) => {
       //   body: JSON.stringify(body),
       // })
     };
-
-
+    // useEffect(() => {
+    //   setTank(<FishTank fishCount={fishCount} />);
+    //   return () => {
+    //     console.log('rerender');
+    //   };
+    // }, [setTank]);
+    const addFish = () => {
+      setFishCount(fishCount + 1);
+      setTank(<FishTank fishCount={fishCount} />);
+    };
     return (
 
       <div>
@@ -51,11 +53,7 @@ const HomePage = ({ user }) => {
         </header>
 
       <div className="control-panel">
-        <button
-          type="submit"
-          className="bttn"
-          onClick={() => setFishCount(fishCount + 1)}
-        >
+        <button type="submit" className="bttn" onClick={() => addFish()}>
           Add
         </button>
         <button
@@ -77,7 +75,7 @@ const HomePage = ({ user }) => {
     <div className="homepage">
       <Header />
       <ControlPanel />
-      <FishTank fishCount={fishCount} />
+      {tank}
     </div>
   );
 };

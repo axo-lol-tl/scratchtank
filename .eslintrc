@@ -4,7 +4,7 @@
     "es6": true
   },
   "plugins": ["import", "prettier"],
-  "extends": ["eslint:recommended","airbnb", "prettier"],
+  "extends": ["airbnb", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
