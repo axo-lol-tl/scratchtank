@@ -7,21 +7,14 @@ const path = require('path');
 const cookieSession = require('cookie-session');
 const bodyParser = require('body-parser');
 const port = 3000;
-const db = require('./models/model')
+
 
 
 //routers
 
-const authRouter = require('./router/auth-routes');
-// const aquarium = require('./router/aquarium');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(passport.initialize());
-app.use(passport.session());
 
-app.use('/api/auth', authRouter);
 
 const db = require('./models/model');
 const { cookieKey } = require('./keys').session;
