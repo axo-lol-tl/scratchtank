@@ -3,6 +3,7 @@ import Matter from 'matter-js';
 
 import fish from '../static/vectors.js';
 import decomp from 'poly-decomp';
+import { json } from 'body-parser';
 
 const FishTank = (props) => {
   const [fishCount, setFishCount] = useState(props.fishCount);
@@ -94,6 +95,13 @@ const FishTank = (props) => {
     };
   }, [fishCount]);
 
+  const syncFishes = () => {
+    fetch('/api')
+    .then(data => json(data))
+    .then(response => console.log(response))
+    .catch(e => console.log(e))
+  }
+
   return (
     <div>
       <div className="canvas" width={'100'} height={'100px'}></div>
@@ -104,6 +112,7 @@ const FishTank = (props) => {
       >
         ADD FISH PLS
       </button>
+      <button onClick={syncFishes}>Sync Fishes</button>
     </div>
   );
 };
