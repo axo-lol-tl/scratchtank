@@ -1,6 +1,8 @@
 body {
   background-color: #3e606f;
   font-family: 'Bebas Neue', cursive;
+  display: grid;
+  font-size: 16px;
 }
 
 .header1 {
@@ -12,14 +14,20 @@ body {
   text-align: center;
 }
 
+.control-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .bttn {
   background-color: #91aa9d;
+  justify-content: space-between;
   color: #193441;
   text-align: center;
   padding: 32px 16px;
   border-radius: 8px;
   border: none;
-  font-size: 70%;
+  font-size: 2em;
   border: 2px solid #193441;
 }
 
@@ -29,9 +37,10 @@ body {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.canvas {
+/* .canvas {
+  padding: 0 5em 5em 0;
+  margin: auto;
   display: flex;
   justify-content: center;
-  width: fit-content;
-  border: 5px solid red;
-}
+  align-items: center;
+} */
