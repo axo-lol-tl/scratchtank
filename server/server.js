@@ -21,6 +21,7 @@ const { cookieKey } = require('./keys').session;
 
 //routers
 const authRouter = require('./router/auth-routes');
+const apiRouter = require('./router/api')
 // const aquarium = require('./router/aquarium');
 
 const userController = require('./controllers/userController')
@@ -38,12 +39,9 @@ app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/api/auth', authRouter);
+app.use('/api', apiRouter);
 
-app.use('/api', userController.verifyUser, (req, res) => {
-  console.log('GET to api')
-  res.send('user verified')
-});
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));

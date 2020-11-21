@@ -4,11 +4,14 @@ import FishTank from './FishTank.jsx';
 const HomePage = ({ user }) => {
   const [fishCount, setFishCount] = useState(5);
   const [tank, setTank] = useState(<FishTank fishCount={fishCount} />);
-  // const [userDB, setUserDB] = useState(user)
+  const [userDB, setUserDB] = useState(user)
 
   useEffect(() => {
-    // fetch('api/user').then((user) => setUserDB(user));
-    console.log('mounted');
+    fetch('/api').then((data) => data.json())
+    .then(user => {
+      console.log(user);
+      setUserDB(user.user.email.split('@')[0]);
+    })
     return () => {
       console.log('unmounted');
     };
@@ -17,7 +20,7 @@ const HomePage = ({ user }) => {
   const Header = () => (
     <header className="header1">
       <h1>Welcome to the Aquarium</h1>
-      <h2 className="header2">{`Welcome ${user || 'Friend!'}!`}</h2>
+      <h2 className="header2">{`Welcome ${userDB || 'Friend!'}!`}</h2>
     </header>
   );
 

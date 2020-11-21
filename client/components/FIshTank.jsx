@@ -96,7 +96,7 @@ const FishTank = (props) => {
   }, [fishCount]);
 
   const syncFishes = () => {
-    fetch('/api')
+    fetch('/api/fishes')
     .then(data => json(data))
     .then(response => console.log(response))
     .catch(e => console.log(e))
