@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HomePage from './HomePage.jsx';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login.jsx';
 
@@ -15,6 +16,8 @@ function App () {
         </Switch >
       </div>
     </Router>
+
+
   );
 };
 

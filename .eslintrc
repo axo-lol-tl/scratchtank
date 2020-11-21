@@ -17,6 +17,7 @@
     "no-console": "warn",
     "no-eval": "error",
     "import/first": "error",
-    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}]
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "no-unused-vars": "warn"
   }
 }
