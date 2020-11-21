@@ -1,6 +1,7 @@
 body {
   background-color: #3e606f;
   font-family: 'Bebas Neue', cursive;
+  display: grid;
 }
 
 .header1 {
@@ -12,8 +13,11 @@ body {
   text-align: center;
 }
 
-.bttn {
+.bttn,
+.bttn1,
+.bttn2 {
   background-color: #91aa9d;
+  justify-content: space-between;
   color: #193441;
   text-align: center;
   padding: 32px 16px;
@@ -30,8 +34,9 @@ body {
 }
 
 .canvas {
+  padding: 0 5em 5em 0;
+  margin: auto;
   display: flex;
   justify-content: center;
-  width: fit-content;
-  border: 5px solid red;
+  align-items: center;
 }
